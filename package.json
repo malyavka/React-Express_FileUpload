@@ -2,7 +2,7 @@
   "name": "parallel-markets-challenge",
   "version": "1.0.0",
   "description": "A React-Express web-application that allows a user to fill in a registration form and upload a file. The data is stored in PostgreSQL, files are stores in a directory Uploads'",
-  "main": "/client/index.js",
+  "main": "index.js",
   "scripts": {
     "build-client": "webpack",
     "build-client-watch": "webpack -w",

@@ -41,7 +41,7 @@ const createApp = () => {
 const startListening = () => {
     // start listening (and create a 'server' object representing our server)
     app.listen(PORT, () =>
-        console.log(`Collecting investors info on ${PORT}`)
+        console.log(`Collecting investors info on ${PORT} \n http://localhost:3000/`)
     )
 
 };

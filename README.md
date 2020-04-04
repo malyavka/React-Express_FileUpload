@@ -39,6 +39,7 @@ Compiler
 - [Babel](https://babeljs.io/)
 
 ## Installation
+<<<<<<< HEAD
 - Create a database (PostgreSQL) named
 ```$xslt
     parallel-markets-challenge

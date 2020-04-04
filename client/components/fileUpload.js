@@ -4,7 +4,6 @@ import axios from 'axios';
 
 const FileUpload = () => {
     const [message, setMessage] = useState('');
-
     const onChange = async e => {
 
         if (e.target.files[0].size >= (3000 * 1024)) {

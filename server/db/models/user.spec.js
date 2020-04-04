@@ -17,7 +17,7 @@ describe('User model', () => {
                 address: '221B Baker Street',
                 state: 'NY',
                 zip: '10001'
-            })
+            });
 
             expect(customer.firstName).to.equal('Sherlock');
             expect(customer.lastName).to.equal('Holmes');

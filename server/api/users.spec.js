@@ -1,19 +1,17 @@
-const {expect} = require('chai');
-const supertest = require('supertest');
-const db = require('../db/index');
+const expect = require('chai').expect;
+const request = require('supertest');
+
 const app = require('../index');
+const agent = request.agent(app);
+const db = require('../db/db');
 const User = db.model('users');
-const agent = supertest.agent(app);
 
 describe('User routes', () => {
 
-    beforeEach(() => {
-        return db.sync({force: true})
-    });
 
     describe('POST /', () => {
-        it('creates a new user', async () => {
-            await agent
+        it('creates a new user',  () => {
+            return agent
                 .post('/api/users')
                 .send({
                     firstName: "Perry",
@@ -27,4 +25,4 @@ describe('User routes', () => {
                 .expect(201)
         })
     })
-}) // end describe('User routes')
+}) ;// end describe('User routes')

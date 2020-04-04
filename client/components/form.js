@@ -1,8 +1,6 @@
 import React from 'react';
 import SelectUSState from 'react-select-us-states';
 import FileUpload from "./fileUpload";
-
-
 export const Form = (props) => {
     return (
         <div className="container">
