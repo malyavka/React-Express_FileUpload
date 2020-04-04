@@ -2,10 +2,14 @@
   "name": "parallel-markets-challenge",
   "version": "1.0.0",
   "description": "A React-Express web-application that allows a user to fill in a registration form and upload a file. The data is stored in PostgreSQL, files are stores in a directory Uploads'",
-  "main": "index.js",
+  "main": "/client/index.js",
   "scripts": {
-    "test": "NODE_ENV='test' mocha \"./server/**/*.spec.js\" ",
-    "start": "nodemon server/index.js"
+    "build-client": "webpack",
+    "build-client-watch": "webpack -w",
+    "start": "node server",
+    "start-dev": "NODE_ENV='development' npm run build-client-watch & npm run start-server",
+    "start-server": "nodemon server -e html,js,scss --ignore public --ignore client",
+    "test": "NODE_ENV='test' mocha \"./server/**/*.spec.js\" "
   },
   "author": "Masha Obaturova",
   "license": "ISC",
@@ -17,10 +21,30 @@
     "morgan": "^1.10.0",
     "pg": "^8.0.0",
     "pg-hstore": "^2.3.3",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-router-dom": "^5.1.2",
     "sequelize": "^5.21.5",
     "supertest": "^4.0.2"
   },
   "devDependencies": {
-    "nodemon": "^2.0.2"
+    "@babel/plugin-proposal-class-properties": "7.0.0-beta.54",
+    "@babel/plugin-proposal-decorators": "7.0.0-beta.54",
+    "@babel/plugin-proposal-export-namespace-from": "7.0.0-beta.54",
+    "@babel/plugin-proposal-function-sent": "7.0.0-beta.54",
+    "@babel/plugin-proposal-json-strings": "7.0.0-beta.54",
+    "@babel/plugin-proposal-numeric-separator": "7.0.0-beta.54",
+    "@babel/plugin-proposal-throw-expressions": "7.0.0-beta.54",
+    "@babel/plugin-syntax-dynamic-import": "7.0.0-beta.54",
+    "@babel/plugin-syntax-import-meta": "7.0.0-beta.54",
+    "@babel/polyfill": "^7.0.0-beta.55",
+    "@babel/register": "^7.0.0-beta.55",
+    "@babel/preset-env": "^7.9.0",
+    "@babel/core": "^7.9.0",
+    "@babel/preset-react": "^7.9.4",
+    "babel-loader": "^8.1.0",
+    "nodemon": "^2.0.2",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11"
   }
 }
