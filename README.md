@@ -16,9 +16,6 @@ The user information that should be accepted (along with at least 1 file for upl
 6. User state (assume US addresses only)
 7. User zip code  (assume US addresses only)
 
-## Screenshots
-Include logo/demo screenshot etc.
-
 ## Tech/framework used
 
 <b>Built with</b>
@@ -58,6 +55,10 @@ Compiler
 4. To run an app
 ```$xslt
     npm start run-dev  
+```
+5. In your browser
+```$xslt
+    http://localhost:3000/
 ```
 
 ## Tests
