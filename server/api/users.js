@@ -27,7 +27,7 @@ router.post('/', async (req, res, next) => {
         // })
 
         const { firstName, lastName, DOB, phone, address, state, zip } = req.body;
-        console.log(firstName);
+        console.log('REQ.BODY>>>>>', req.body);
         await User.create({firstName, lastName, DOB, phone, address, state, zip});
         res.status(201).json();
     }catch(err){

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Form } from './form';
+import axios from 'axios';
 
 const defaultState = {
     firstName: "",
@@ -7,7 +8,7 @@ const defaultState = {
     DOB: "",
     phone: "",
     address: "",
-    state: "",
+    states: "",
     zip: ""
 };
 
@@ -23,16 +24,16 @@ export class AddUser extends Component {
             [evt.target.name]: evt.target.value
         });
     }
-    handleSubmit (evt) {
+    async handleSubmit (evt) {
         evt.preventDefault()
-        this.props.add(this.state);
+        const res = await axios.post('/api/users', {firstName: this.state.firstName, lastName: this.state.lastName, DOB: this.state.DOB, phone: this.state.phone, address: this.state.address, state: this.state.states, zip: this.state.zip});
         this.setState({
             firstName: "",
             lastName: "",
             DOB: "",
             phone: "",
             address: "",
-            state: "",
+            states: "",
             zip: ""
         });
     }
@@ -48,7 +49,7 @@ export class AddUser extends Component {
                     DOB={this.state.DOB}
                     phone={this.state.phone}
                     address={this.state.address}
-                    state={this.state.state}
+                    states={this.state.states}
                     zip={this.state.zip}
                 />
             </div>

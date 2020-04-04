@@ -34,14 +34,14 @@ export const Form = (props) => {
             <label>
                 State:
             </label>
-            <input name="state" type="text" value={props.state} onChange={props.handleChange} />
+            <input name="states" type="text" value={props.states} onChange={props.handleChange} />
             <br />
             <label>
                 Zip code:
             </label>
             <input name="zip" type="text" value={props.zip} onChange={props.handleChange} />
             <br />
-            <button type="submit" disabled={!props.firstName || !props.lastName || !props.email}>Submit</button>
+            <button type="submit" disabled={!props.firstName || !props.lastName}>Submit</button>
 
         </form>
     )
