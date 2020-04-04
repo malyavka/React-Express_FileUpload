@@ -18,6 +18,10 @@ const createApp = () => {
     app.use(express.urlencoded({
         extended: true
     }));
+    //api route(s)
+    app.use('/api', require('./api'));
+
+
 
     //statuc file-serving middleware
     app.use(express.static(path.join(__dirname, '..', 'public')));
