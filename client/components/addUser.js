@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { Form } from './form';
 import axios from 'axios';
-import SelectUSState from 'react-select-us-states';
-import FileUpload from "./fileUpload";
 
 const defaultState = {
     firstName: "",
@@ -10,7 +8,7 @@ const defaultState = {
     DOB: "",
     phone: "",
     address: "",
-    states: "",
+    states: "AL",
     zip: "",
 };
 
@@ -56,21 +54,22 @@ export class AddUser extends Component {
     }
     render () {
         return (
-            <div id='container'>
+            <div className='container'>
                 <h3>Please, submit this form: </h3>
-                <FileUpload/>
-                <Form
-                    handleSubmit={this.handleSubmit}
-                    handleChange={this.handleChange}
-                    setNewValue={this.setNewValue}
-                    firstName={this.state.firstName}
-                    lastName={this.state.lastName}
-                    DOB={this.state.DOB}
-                    phone={this.state.phone}
-                    address={this.state.address}
-                    states={this.state.states}
-                    zip={this.state.zip}
-                />
+                <div className='form'>
+                    <Form
+                        handleSubmit={this.handleSubmit}
+                        handleChange={this.handleChange}
+                        setNewValue={this.setNewValue}
+                        firstName={this.state.firstName}
+                        lastName={this.state.lastName}
+                        DOB={this.state.DOB}
+                        phone={this.state.phone}
+                        address={this.state.address}
+                        states={this.state.states}
+                        zip={this.state.zip}
+                    />
+                </div>
             </div>
         )}
 

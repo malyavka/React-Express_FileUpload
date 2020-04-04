@@ -14,17 +14,17 @@ describe('User routes', () => {
     describe('POST /', () => {
         it('creates a new user', async () => {
             await agent
-                .post('/')
+                .post('/api/users')
                 .send({
                     firstName: "Perry",
                     lastName: "Mason",
-                    DOB: "1854-01-06",
+                    DOB: "1933-03-06",
                     phone: "222-222-22-22",
-                    address: "221B Baker Street",
-                    state: "New York",
-                    zip: "10001"
+                    address: "777 Best Lawyer",
+                    state: "LA",
+                    zip: "23334"
                 })
-                .expect(200)
+                .expect(201)
         })
     })
 }) // end describe('User routes')

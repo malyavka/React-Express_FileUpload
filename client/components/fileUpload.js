@@ -3,24 +3,16 @@ import Message from './message';
 import axios from 'axios';
 
 const FileUpload = () => {
-    const [file, setFile] = useState('');
-    const [filename, setFilename] = useState('Choose File');
     const [message, setMessage] = useState('');
 
-    const onChange = e => {
-        setFile(e.target.files[0]);
-        setFilename(e.target.files[0].name);
+    const onChange = async e => {
 
-
-        if (file.size >= (3000 * 1024)) {
+        if (e.target.files[0].size >= (3000 * 1024)) {
             alert('Sorry, the max allowed size for images is 100KB')
         }
-    };
-
-    const onSubmit = async e => {
-        e.preventDefault();
         const formData = new FormData();
-        formData.append('file', file);
+        formData.append('file', e.target.files[0]);
+        console.log(formData.get('file'))
 
         try {
             const res = await axios.post('/api/upload', formData, {
@@ -31,9 +23,7 @@ const FileUpload = () => {
             setMessage('File Uploaded! Thank you!');
             setTimeout(() => {
                 setMessage('');
-                setFile('');
-                setFilename('');
-            }, 3000)
+            }, 4000)
         } catch (err) {
             if (err.response.status === 500) {
                 setMessage('There was a problem with the server');
@@ -46,18 +36,14 @@ const FileUpload = () => {
     return (
         <Fragment>
             {message ? <Message msg={message} /> : null}
-            <form onSubmit={onSubmit}>
                 <div>
                     <input
                         type='file'
+                        required
                         onChange={onChange}
+                        title='sdf'
                     />
                 </div>
-                <input
-                    type='submit'
-                    value='Upload'
-                />
-            </form>
 
         </Fragment>
     );

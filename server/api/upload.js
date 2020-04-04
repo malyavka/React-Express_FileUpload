@@ -5,8 +5,6 @@ module.exports = router;
 
 
 router.post('/', (req, res) => {
-    console.log('REQ>>>>>>>>', req.files)
-
     if (req.files.file === null) {
         return res.status(400).json({ msg: "You did not upload any files"})
     }
