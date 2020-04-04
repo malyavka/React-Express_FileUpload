@@ -18,13 +18,13 @@ describe('User routes', () => {
                 .send({
                     firstName: "Perry",
                     lastName: "Mason",
-                    DOB: "1854-01-06",
+                    DOB: "1933-03-06",
                     phone: "222-222-22-22",
-                    address: "221B Baker Street",
-                    state: "New York",
-                    zip: "10001"
+                    address: "33 Criminal Lawyer",
+                    state: "LA",
+                    zip: "23330"
                 })
                 .expect(200)
         })
     })
-}) // end describe('User routes')
+}) ;// end describe('User routes')

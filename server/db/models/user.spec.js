@@ -15,7 +15,7 @@ describe('User model', () => {
                 DOB: '1854-01-06',
                 phone: '222-222-22-22',
                 address: '221B Baker Street',
-                state: 'New York',
+                state: 'NY',
                 zip: '10001'
             })
 
@@ -24,7 +24,7 @@ describe('User model', () => {
             expect(customer.DOB).to.equal('1854-01-06');
             expect(customer.phone).to.equal('222-222-22-22');
             expect(customer.address).to.equal('221B Baker Street');
-            expect(customer.state).to.equal('New York');
+            expect(customer.state).to.equal('NY');
             expect(customer.zip).to.equal('10001');
         });
         it('`firstName`, `lastName`, `DOB`, `phone`, `address`, `state` and `zip` are required', async () => {
@@ -45,7 +45,7 @@ describe('User model', () => {
                 DOB: '1854-01-06',
                 phone: '222-222-22-22',
                 address: '221B Baker Street',
-                state: 'New York',
+                state: 'NY',
                 zip: '10001'
             });
             expect(valuedCustomer.fullName).to.equal('Perry Mason')
@@ -57,7 +57,7 @@ describe('User model', () => {
                 DOB: '1854-01-06',
                 phone: '222-222-22-22',
                 address: '221B Baker Street',
-                state: 'New York',
+                state: 'NY',
                 zip: '10001'
             });
             expect(favCustomer.firstName).to.equal('Miss');

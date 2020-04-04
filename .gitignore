@@ -3,4 +3,3 @@ node_modules
 ./idea
 public/bundle.js
 public/bundle.js.map
-server/api/uploads
