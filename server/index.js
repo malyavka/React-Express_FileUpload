@@ -18,14 +18,14 @@ const createApp = () => {
     app.use(express.urlencoded({
         extended: true
     }));
+    // upload files
+    app.use(fileUpload());
+
     //api route(s)
     app.use('/api', require('./api'));
 
     //statuc file-serving middleware
     app.use(express.static(path.join(__dirname, '..', 'public')));
-
-    // upload files
-    app.use(fileUpload());
 
     // error handling endware
     app.use((err, req, res, next) => {

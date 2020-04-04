@@ -1,4 +1,5 @@
 import React from 'react';
+import SelectUSState from 'react-select-us-states';
 
 
 export const Form = (props) => {
@@ -19,7 +20,7 @@ export const Form = (props) => {
             <label>
                 Date of birth:
             </label>
-            <input name = "DOB" type="text" value={props.DOB} onChange={props.handleChange} />
+            <input name = "DOB" type="date" value={props.DOB} onChange={props.handleChange} />
             <br />
             <label>
                 Phone:
@@ -29,17 +30,17 @@ export const Form = (props) => {
             <label>
                 Address:
             </label>
-            <input name="address" type="text" value={props.address} onChange={props.handleChange} />
+            <input name="address" type="address" value={props.address} onChange={props.handleChange} />
             <br />
             <label>
                 State:
             </label>
-            <input name="states" type="text" value={props.states} onChange={props.handleChange} />
+            <SelectUSState onChange={props.setNewValue}/>
             <br />
             <label>
                 Zip code:
             </label>
-            <input name="zip" type="text" value={props.zip} onChange={props.handleChange} />
+            <input name="zip" type="zip" value={props.zip} onChange={props.handleChange} />
             <br />
             <button type="submit" disabled={!props.firstName || !props.lastName}>Submit</button>
 
