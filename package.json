@@ -4,7 +4,7 @@
   "description": "A React-Express web-application that allows a user to fill in a registration form and upload a file. The data is stored in PostgreSQL, files are stores in a directory Uploads'",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "NODE_ENV='test' mocha \"./server/**/*.spec.js\" "
   },
   "author": "Masha Obaturova",
   "license": "ISC",
