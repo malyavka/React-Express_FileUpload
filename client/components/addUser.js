@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Form } from './form';
 import axios from 'axios';
 import SelectUSState from 'react-select-us-states';
+import FileUpload from "./fileUpload";
 
 const defaultState = {
     firstName: "",
@@ -10,7 +11,7 @@ const defaultState = {
     phone: "",
     address: "",
     states: "",
-    zip: ""
+    zip: "",
 };
 
 export class AddUser extends Component {
@@ -31,12 +32,18 @@ export class AddUser extends Component {
         this.setState({
             states: newValue
         });
-        console.log('this is the State code:' + newValue);
     }
     async handleSubmit (evt) {
         evt.preventDefault()
-        console.log(this.state)
-        const res = await axios.post('/api/users', {firstName: this.state.firstName, lastName: this.state.lastName, DOB: this.state.DOB, phone: this.state.phone, address: this.state.address, state: this.state.states, zip: this.state.zip});
+        try {
+            const res = await axios.post('/api/users', {firstName: this.state.firstName, lastName: this.state.lastName, DOB: this.state.DOB, phone: this.state.phone, address: this.state.address, state: this.state.states, zip: this.state.zip, });
+        } catch(err) {
+            if (err.response.status === 500){
+                console.log('SERVER')
+            } else {
+                console.log(err.response.data.msg)
+            }
+        }
         this.setState({
             firstName: "",
             lastName: "",
@@ -44,13 +51,14 @@ export class AddUser extends Component {
             phone: "",
             address: "",
             states: "",
-            zip: ""
+            zip: "",
         });
     }
     render () {
         return (
-            <div>
+            <div id='container'>
                 <h3>Please, submit this form: </h3>
+                <FileUpload/>
                 <Form
                     handleSubmit={this.handleSubmit}
                     handleChange={this.handleChange}
