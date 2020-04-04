@@ -10,8 +10,6 @@ const FileUpload = () => {
     const onChange = e => {
         setFile(e.target.files[0]);
         setFilename(e.target.files[0].name);
-
-
         if (file.size >= (3000 * 1024)) {
             alert('Sorry, the max allowed size for images is 100KB')
         }

@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React from 'react'
 import {AddUser} from './addUser'
 
 export default function Main () {

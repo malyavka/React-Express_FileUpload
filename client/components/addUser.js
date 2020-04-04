@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Form } from './form';
 import axios from 'axios';
-import SelectUSState from 'react-select-us-states';
 import FileUpload from "./fileUpload";
 
 const defaultState = {
